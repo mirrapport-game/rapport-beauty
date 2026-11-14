@@ -1,0 +1,1 @@
+comment on table public.cards is 'Card library (Rapport Beauty)';

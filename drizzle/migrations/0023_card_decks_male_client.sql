@@ -1,0 +1,2 @@
+ALTER TABLE public.categories ADD COLUMN IF NOT EXISTS deck text NOT NULL DEFAULT 'salon';
+INSERT INTO public.cards(id,type,category_id,title,description,batch_id) VALUES ('role_client_male','role','master_client','Клиент (мужчина)','Вы — клиент салона, мужчина.','beauty_v1') ON CONFLICT (id) DO NOTHING;
