@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS play_roles text[] NOT NULL DEFAULT '{}';

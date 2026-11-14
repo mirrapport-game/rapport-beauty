@@ -1,0 +1,2 @@
+ALTER TABLE public.user_daily_preferences ADD COLUMN IF NOT EXISTS mode text CHECK (mode IN ('my_role','random','career'));
+ALTER TABLE public.user_daily_preferences ADD COLUMN IF NOT EXISTS my_role_id text;
