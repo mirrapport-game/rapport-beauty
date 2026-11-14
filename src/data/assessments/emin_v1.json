@@ -1,0 +1,890 @@
+{
+  "meta": {
+    "version": "1.0",
+    "batch_id": "assessment_emin_v1",
+    "type": "assessment",
+    "author_concept": "На основе концепции эмоционального интеллекта Д. В. Люсина (ЭмИн)",
+    "scales": [
+      {
+        "id": "empathy",
+        "title": "Эмпатия"
+      },
+      {
+        "id": "emotion_management",
+        "title": "Управление эмоциями"
+      },
+      {
+        "id": "self_motivation",
+        "title": "Самомотивация"
+      },
+      {
+        "id": "social_skills",
+        "title": "Социальные навыки"
+      },
+      {
+        "id": "stress",
+        "title": "Стрессоустойчивость"
+      },
+      {
+        "id": "self_awareness",
+        "title": "Понимание себя"
+      }
+    ],
+    "question_count": 15,
+    "estimated_minutes": 6
+  },
+  "assessment_test": {
+    "id": "emin_v1",
+    "title": "Тест ЭмИн (адаптированный)",
+    "description": "Измеряет способность распознавать, понимать и регулировать свои эмоции и эмоции других людей.",
+    "author_concept": "На основе концепции Д. В. Люсина (ЭмИн)",
+    "estimated_minutes": 6,
+    "scale_mapping": {
+      "empathy": [
+        "empathy"
+      ],
+      "emotion_management": [
+        "emotion_management"
+      ],
+      "self_motivation": [
+        "self_motivation"
+      ],
+      "social_skills": [
+        "social_skills"
+      ],
+      "stress": [
+        "stress"
+      ],
+      "self_awareness": [
+        "self_awareness"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "emin_q01",
+      "scenario": "Клиентка впервые пришла на наращивание ресниц и заметно нервничает.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу: «Вижу, вы волнуетесь. Давайте расскажу, как всё пройдёт»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Просто начну процедуру, волнение пройдёт",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Скажу: «Не переживайте, это ерунда»",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Позову коллегу, чтобы она её успокоила",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 3,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q02",
+      "scenario": "Клиентка в третий раз просит переделать форму бровей, и вы начинаете злиться.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Замечу злость, сделаю паузу и спокойно уточню, что именно её не устраивает",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Постараюсь не показывать, но стану резкой",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Скажу ей, что она меня раздражает",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не замечу злости, буду действовать на автомате",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q03",
+      "scenario": "Коллега-администратор пришла на смену явно расстроенной.",
+      "question": "Как вы отреагируете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Замечу её состояние, спрошу, всё ли в порядке, предложу помощь",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Не буду вмешиваться, это личное",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Спрошу, но если не захочет говорить — отстану",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 4,
+            "self_motivation": 3,
+            "social_skills": 4,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Сделаю вид, что не заметила",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q04",
+      "scenario": "Клиентка говорит «стригите как хотите», но по ней видно, что она боится резких перемен.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Мягко уточню: «Давайте обсудим длину, чтобы вам точно понравилось»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Поверю словам и сделаю на своё усмотрение",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Скажу: «Не бойтесь, все сначала боятся»",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 3,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Проигнорирую, она сама сказала, что всё равно",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q05",
+      "scenario": "Клиентка намекает, что уйдёт в другой салон, если ей не сделают скидку.",
+      "question": "Ваши действия?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Спокойно скажу: «Понимаю, хочется выгоднее. Давайте посмотрим, что я могу предложить»",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Сделаю скидку, чтобы не потерять её",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 3,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Скажу: «Вы на меня давите»",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Позову управляющую",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 4,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q06",
+      "scenario": "Коллега-мастер весь день молчит, но говорит, что «всё нормально».",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу: «Если захочешь поговорить — я рядом», — и не буду давить",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Поверю и не буду трогать",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Начну допытываться, что случилось",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не буду обращать внимания",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q07",
+      "scenario": "Клиентка повышает голос: после пилинга покраснела кожа, а вечером у неё мероприятие.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу: «Понимаю, вы переживаете за вечер. Давайте я помогу это быстро успокоить»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 5,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Спокойно скажу: «Не кричите на меня»",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Отвечу в том же тоне",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Позову управляющую разбираться",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q08",
+      "scenario": "Под конец длинной смены вы замечаете, что теряете концентрацию.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Предупрежу администратора, что мне нужна пауза, и возьму 5 минут",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Постараюсь доработать на силе воли",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 4,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Буду работать на автомате",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не замечу усталости, пока не сорвусь",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 1,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q09",
+      "scenario": "Вы рассказываете клиентке про домашний уход, а она смотрит в телефон.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Спрошу: «Что для вас сейчас важнее всего? Расскажу только главное»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Продолжу говорить, она всё равно услышит",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Скажу: «Вы меня не слушаете»",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Замолчу и буду ждать",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 2,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q10",
+      "scenario": "Вы видите, что коллега расстроена после неприятной клиентки, но вмешиваться не хочется.",
+      "question": "Как поступите?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу: «Если нужна помощь — я рядом», — и не буду давить",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Не буду вмешиваться, это не моё дело",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Спрошу напрямую, что случилось",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Сделаю вид, что не заметила",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q11",
+      "scenario": "Клиентка говорит: «Вы не понимаете, какой цвет я хочу!»",
+      "question": "Как ответите?",
+      "options": [
+        {
+          "id": "a",
+          "text": "«Покажите, пожалуйста, что я упускаю. Я хочу понять»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 5,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "«Я вас прекрасно понимаю»",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "«Это ваше мнение»",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Промолчу",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q12",
+      "scenario": "Вас раздражает коллега, которая постоянно берёт ваши инструменты.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Замечу раздражение, подумаю, что за ним стоит, и спокойно договорюсь с ней",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Постараюсь с ней не общаться",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Скажу ей, что она меня бесит",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не замечу, буду работать дальше",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q13",
+      "scenario": "Клиентка в кресле расстроена: она делится, что у неё тяжёлый период в жизни.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу: «Я рядом. Сегодня ваше время отдохнуть», — и дам ей выговориться",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Скажу: «Не грустите, всё будет хорошо»",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 3,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Переведу разговор на процедуру",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 1,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Предложу ей позвонить подруге",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 3,
+            "self_motivation": 2,
+            "social_skills": 4,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q14",
+      "scenario": "Клиентка ничего не говорит, но по лицу видно, что ей не нравится, как идёт стрижка.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу: «Давайте сверимся — всё ли вам нравится по длине?»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Буду работать дальше, она сама скажет, если что",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Спрошу напрямую: «Вам что-то не нравится?»",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не буду обращать внимания",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emin_q15",
+      "scenario": "Вы замечаете, что коллега сегодня особенно заботлива с клиентками.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу ей: «Заметила, как ты сегодня работаешь. Здорово»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 5,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Ничего, это её работа",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Спрошу, что с ней случилось",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не обращу внимания",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    }
+  ]
+}
