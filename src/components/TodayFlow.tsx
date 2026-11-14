@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -7,6 +7,8 @@ import { QUESTIONS, LADDER } from "@/lib/assessment";
 import { CAREER_ROLES, dayIndex, MODE_INFO, quickQuestionsFor, roleForToday, weakest, type DailyMode } from "@/lib/daily-path";
 import { DAILY_CARD, GROWTH_CARD, streakText } from "@/lib/copy";
 import { useSkillHistory } from "@/lib/use-skill-history";
+import { useProgress } from "@/lib/use-progress";
+import { AchievementsGrid, HistoryList } from "@/components/ProgressBlocks";
 
 type Role = { id: string; title: string; description: string | null };
 type Card = { id: string; role_id: string | null; status: string; streak_day: number };
@@ -21,6 +23,18 @@ export function TodayFlow({ userId }: { userId: string }) {
   const [step, setStep] = useState(1);
   const [changing, setChanging] = useState(false);
   const points = useSkillHistory(userId);
+  const progress = useProgress(userId);
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    supabase.rpc("has_role", { _user_id: userId, _role: "admin" }).then(({ data }) => setIsAdmin(!!data));
+  }, [userId]);
+  const restart = async () => {
+    if (!confirm("Начать заново? Тест, режим и задания дня будут сброшены.")) return;
+    const { error } = await supabase.rpc("admin_restart_my_progress");
+    if (error) { toast.error("Не удалось сбросить"); return; }
+    toast.success("Начинаем заново");
+    window.location.reload();
+  };
 
   useEffect(() => {
     supabase.from("assessment_results").select("id", { count: "exact", head: true }).eq("user_id", userId).then(({ count }) => setHasTest((count ?? 0) > 0));
@@ -71,10 +85,15 @@ export function TodayFlow({ userId }: { userId: string }) {
 
   if (hasTest === null || mode === undefined) return <p className="text-center text-muted-foreground">Загрузка…</p>;
 
-  const stepNo = !hasTest ? 1 : !mode || changing ? 2 : 3;
+  const stepNo = !hasTest ? 1 : 2;
   return (
     <div className="space-y-4">
       <Stepper current={stepNo} />
+      {isAdmin && (
+        <div className="flex justify-end">
+          <button type="button" onClick={restart} className="rounded-md border border-border px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground">↺ Начать заново (админ)</button>
+        </div>
+      )}
 
       {!hasTest && (
         <Box title="Шаг 1. Входной тест" accent>
@@ -83,24 +102,93 @@ export function TodayFlow({ userId }: { userId: string }) {
         </Box>
       )}
 
-      {hasTest && (!mode || changing) && (
-        <ModePicker roles={roles} initialRole={myRole} onSave={saveMode} />
-      )}
-
-      {hasTest && mode && !changing && (
+      {hasTest && (
         <>
-          <TodayTask card={card} roles={roles} mode={mode} step={step} onChange={() => setChanging(true)} />
-          <StreakCard streak={card?.streak_day ?? 0} />
-          <QuickSituation userId={userId} roleId={card?.role_id ?? myRole} />
-          <SkillBars points={points} />
+          <CodeJoin />
+          {(!mode || changing) ? (
+            <ModePicker roles={roles} initialRole={myRole} onSave={saveMode} />
+          ) : (
+            <>
+              <TodayTask card={card} roles={roles} mode={mode} step={step} onChange={() => setChanging(true)} />
+              <StreakCard streak={card?.streak_day ?? 0} />
+              <QuickSituation userId={userId} roleId={card?.role_id ?? myRole} />
+            </>
+          )}
+          <MorePanels points={points} progress={progress} />
         </>
       )}
     </div>
   );
 }
 
+/** Step 2 after the test: join the leader's game by session code. */
+function CodeJoin() {
+  const [code, setCode] = useState("");
+  const navigate = useNavigate();
+  return (
+    <Box title="Шаг 2. Игра с ведущим" accent>
+      <p className="text-sm">Ведущий создал игру и назвал код. Введите его, чтобы присоединиться и получить карточку.</p>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (code.trim().length === 6) navigate({ to: "/join/$code", params: { code: code.trim().toUpperCase() } });
+        }}
+        className="mt-3 flex gap-2"
+      >
+        <input value={code} onChange={(e) => setCode(e.target.value.toUpperCase())} maxLength={6} placeholder="ABC123"
+          className="w-full rounded-xl border border-input bg-background px-4 py-3 text-center font-mono text-xl tracking-[0.3em]" />
+        <button className="rounded-md bg-primary px-5 font-semibold text-primary-foreground">Войти</button>
+      </form>
+    </Box>
+  );
+}
+
+/** Extra sections hidden behind buttons; only one panel opens at a time. */
+function MorePanels({ points, progress }: { points: ReturnType<typeof useSkillHistory>; progress: ReturnType<typeof useProgress> }) {
+  const [open, setOpen] = useState<string | null>(null);
+  const panels = [
+    { key: "growth", title: "📊 Твой рост" },
+    { key: "communication", title: "💬 Мой профиль коммуникации" },
+    { key: "achievements", title: "🏆 Достижения" },
+    { key: "history", title: "🕘 История игр" },
+    { key: "scenario", title: "✍️ Добавить свой сценарий" },
+  ];
+  return (
+    <div className="space-y-2">
+      {panels.map((p) => (
+        <div key={p.key} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+          <button onClick={() => setOpen(open === p.key ? null : p.key)} aria-expanded={open === p.key}
+            className="flex w-full items-center justify-between p-4 text-left font-semibold">
+            <span>{p.title}</span>
+            <span className={`transition-transform ${open === p.key ? "rotate-180" : ""}`}>▾</span>
+          </button>
+          {open === p.key && (
+            <div className="border-t border-border p-4">
+              {p.key === "growth" && (points?.length ? <SkillBars points={points} /> : <p className="text-sm text-muted-foreground">Пройдите первую игру или задание дня — здесь появится ваш рост по навыкам.</p>)}
+              {p.key === "communication" && (
+                <div className="space-y-3">
+                  <p className="text-sm text-muted-foreground">Сводный профиль: радар навыков, динамика от старта до сейчас и история оценок.</p>
+                  <Link to="/profile/communication" className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Открыть профиль коммуникации</Link>
+                </div>
+              )}
+              {p.key === "achievements" && <AchievementsGrid p={progress} />}
+              {p.key === "history" && <HistoryList p={progress} />}
+              {p.key === "scenario" && (
+                <div className="space-y-3">
+                  <p className="text-sm text-muted-foreground">Опишите реальную ситуацию из вашего салона — она попадёт в игру после проверки ведущим.</p>
+                  <Link to="/scenarios/new" className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Добавить сценарий</Link>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Stepper({ current }: { current: number }) {
-  const items = ["Тест", "Режим", "Задание дня"];
+  const items = ["Тест", "Игра по коду"];
   return (
     <ol className="flex gap-2 text-xs">
       {items.map((t, i) => (
@@ -125,7 +213,7 @@ function ModePicker({ roles, initialRole, onSave }: { roles: Role[]; initialRole
   const [m, setM] = useState<DailyMode | null>(null);
   const [role, setRole] = useState<string | null>(initialRole);
   return (
-    <Box title="Шаг 2. Как вы хотите играть?" accent>
+    <Box title="Как вы хотите играть?">
       <p className="mb-3 text-sm text-muted-foreground">Каждый день вы получаете одну карточку с ситуацией из салона и отвечаете на неё в диалоге. ИИ оценивает ответ и подсказывает, что улучшить. Выберите, как будут выдаваться роли:</p>
       <div className="grid gap-2">
         {(Object.keys(MODE_INFO) as DailyMode[]).map((k) => (

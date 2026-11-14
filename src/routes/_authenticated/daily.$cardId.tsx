@@ -9,7 +9,7 @@ import { getDailyModel, submitDaily, getDailyPractice, scoreDailyPractice, SLOT_
 
 const LEVEL_NAME: Record<number, string> = { 1: "вопрос", 2: "просьба", 3: "требование" };
 
-/** After the reference answer: retry on a harder card from the same series (max 2) or study the linked skill. */
+/** After the reference answer: one retry on a harder card from the same series. The day ends on the reference answer. */
 const avg = (f: DailyFeedback) => f.checks.length ? f.checks.reduce((a, c) => a + c.score, 0) / f.checks.length : 0;
 
 function Practice({ cardId, slot, first }: { cardId: string; slot: Slot; first: DailyFeedback }) {
@@ -17,7 +17,6 @@ function Practice({ cardId, slot, first }: { cardId: string; slot: Slot; first: 
   const score = useServerFn(scoreDailyPractice);
   const [attempt, setAttempt] = useState(0);
   const [card, setCard] = useState<PracticeCard | null>(null);
-  const [showSkill, setShowSkill] = useState(false);
   const [text, setText] = useState("");
   const [fb, setFb] = useState<DailyFeedback | null>(null);
   const [busy, setBusy] = useState(false);
@@ -40,28 +39,11 @@ function Practice({ cardId, slot, first }: { cardId: string; slot: Slot; first: 
     } catch (e) { toast.error(e instanceof Error ? e.message : "Ошибка"); }
     setBusy(false);
   };
-  const openSkill = async () => { if (!card) await fetchCard(1); setShowSkill(true); };
-
   return (
     <div className="space-y-3 pt-2">
       {!card && (
-        <div className="grid gap-2 sm:grid-cols-2">
-          <button disabled={busy} onClick={() => fetchCard(1)} className="rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-50">🔁 Попробовать ещё раз</button>
-          <button disabled={busy} onClick={openSkill} className="rounded-md border border-border px-4 py-2.5 text-sm disabled:opacity-50">🎓 Изучить навык</button>
-        </div>
+        <button disabled={busy} onClick={() => fetchCard(1)} className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-50">🔁 Попробовать ещё раз</button>
       )}
-      {card && showSkill && card.skill && (
-        <div className="space-y-2 rounded-xl border border-primary/30 bg-accent/40 p-4">
-          <p className="text-xs uppercase tracking-wide text-muted-foreground">Карточка навыка</p>
-          <p className="text-lg font-bold">{card.skill.title}</p>
-          {card.skill.formula && <p className="font-semibold text-primary">{card.skill.formula}</p>}
-          {card.skill.description && <p className="text-sm">{card.skill.description}</p>}
-          {card.skill.how_to_apply.length > 0 && <ul className="list-disc space-y-1 pl-5 text-sm">{card.skill.how_to_apply.map((h) => <li key={h}>{h}</li>)}</ul>}
-          {card.skill.why_learn && <p className="text-sm text-muted-foreground">{card.skill.why_learn}</p>}
-          <p className="text-sm italic">О чём подумать: где в вашей сегодняшней ситуации этот приём помог бы — и что бы вы сказали иначе?</p>
-        </div>
-      )}
-      {card && showSkill && !card.skill && <p className="text-sm text-muted-foreground">Для этой ситуации карточки навыка пока нет.</p>}
       {card && (
         <div className="space-y-2 rounded-xl border border-border p-4">
           <p className="text-xs uppercase tracking-wide text-muted-foreground">Повтор · сложнее: {LEVEL_NAME[card.situation.level ?? 2]}</p>
@@ -79,9 +61,6 @@ function Practice({ cardId, slot, first }: { cardId: string; slot: Slot; first: 
               <p className="text-sm">{fb.comment}</p>
             </div>
           )}
-          <div className="flex flex-wrap gap-2">
-            {!showSkill && <button onClick={() => setShowSkill(true)} className="rounded-md border border-border px-3 py-2 text-sm">🎓 Изучить навык</button>}
-          </div>
           {fb && (() => {
             const a = avg(first), b = avg(fb), d = b - a;
             return (
@@ -93,7 +72,7 @@ function Practice({ cardId, slot, first }: { cardId: string; slot: Slot; first: 
                     <div className="h-2 rounded-full bg-background"><div className="h-2 rounded-full bg-primary" style={{ width: `${(v / 5) * 100}%` }} /></div>
                   </div>
                 ))}
-                <p className="text-sm">{d >= 0.25 ? `📈 +${d.toFixed(1)} — вы стали увереннее, и это на более сложной карточке!` : d > -0.25 ? "➡️ Тот же уровень, но на более сложной карточке — это уже рост." : `📉 ${d.toFixed(1)} — сложная карточка далась труднее. Загляните в навык и попробуйте завтра.`}</p>
+                <p className="text-sm">{d >= 0.25 ? `📈 +${d.toFixed(1)} — вы стали увереннее, и это на более сложной карточке!` : d > -0.25 ? "➡️ Тот же уровень, но на более сложной карточке — это уже рост." : `📉 ${d.toFixed(1)} — сложная карточка далась труднее. Перечитайте эталон и попробуйте завтра.`}</p>
                 <p className="text-xs text-muted-foreground">Повтор на сегодня использован — завтра новая роль.</p>
               </div>
             );

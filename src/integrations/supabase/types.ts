@@ -1554,6 +1554,7 @@ export type Database = {
           roles: string[]
         }[]
       }
+      admin_restart_my_progress: { Args: never; Returns: undefined }
       admin_set_clinic_manager: {
         Args: { _cid: string; _email: string }
         Returns: undefined

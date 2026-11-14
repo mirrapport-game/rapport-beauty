@@ -204,6 +204,20 @@
       "when": 1793983568637,
       "tag": "0028_admin_join_as_player",
       "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1794663829237,
+      "tag": "0029_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1794665553101,
+      "tag": "0030_admin_restart_progress",
+      "breakpoints": true
     }
   ]
 }
