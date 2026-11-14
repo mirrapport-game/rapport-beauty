@@ -1,0 +1,890 @@
+{
+  "meta": {
+    "version": "1.0",
+    "batch_id": "assessment_goleman_v1",
+    "type": "assessment",
+    "author_concept": "На основе концепции эмоционального интеллекта Дэниела Гоулмана",
+    "scales": [
+      {
+        "id": "empathy",
+        "title": "Эмпатия"
+      },
+      {
+        "id": "emotion_management",
+        "title": "Саморегуляция"
+      },
+      {
+        "id": "self_motivation",
+        "title": "Мотивация"
+      },
+      {
+        "id": "social_skills",
+        "title": "Социальные навыки"
+      },
+      {
+        "id": "stress",
+        "title": "Стрессоустойчивость"
+      },
+      {
+        "id": "self_awareness",
+        "title": "Самосознание"
+      }
+    ],
+    "question_count": 15,
+    "estimated_minutes": 7
+  },
+  "assessment_test": {
+    "id": "goleman_v1",
+    "title": "Тест Д. Гоулмана (адаптированный)",
+    "description": "Оценивает самосознание, саморегуляцию, мотивацию, эмпатию и социальные навыки.",
+    "author_concept": "На основе концепции Дэниела Гоулмана",
+    "estimated_minutes": 7,
+    "scale_mapping": {
+      "empathy": [
+        "empathy"
+      ],
+      "emotion_management": [
+        "emotion_management"
+      ],
+      "self_motivation": [
+        "self_motivation"
+      ],
+      "social_skills": [
+        "social_skills"
+      ],
+      "stress": [
+        "stress"
+      ],
+      "self_awareness": [
+        "self_awareness"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "goleman_q01",
+      "scenario": "После окрашивания клиентка молча расплачивается, но выглядит недовольной.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Спрошу: «Как вам результат? Мне важно, чтобы вы ушли довольной»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Ничего, если бы что-то было не так — сказала бы",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Спрошу прямо: «Вам не понравилось?»",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Сделаю вид, что не заметила",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q02",
+      "scenario": "Коллега опять опоздала, и вам пришлось принимать её клиентку.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Замечу раздражение и позже спокойно обсужу с ней ситуацию",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Промолчу, но буду холодна с ней",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Выскажу ей всё при клиентах",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не замечу, буду работать дальше",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q03",
+      "scenario": "Перед праздниками у вас плотная запись и ещё нужно подготовить свадебный образ на выезде.",
+      "question": "Ваша реакция?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Составлю план по дням, расставлю приоритеты и попрошу помощи, где нужно",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 5,
+            "self_motivation": 5,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Буду работать без перерывов на износ",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Возьмусь, но буду откладывать до последнего",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 5,
+            "stress": 3,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "Откажусь от выезда, слишком тяжело",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 1,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q04",
+      "scenario": "Клиентка жалуется вам на мастера, но решить вопрос вы сами не можете.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Выслушаю, поблагодарю и передам управляющей, сообщу клиентке срок ответа",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Скажу, что это не ко мне",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Пообещаю всё исправить, хотя не могу",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 4,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Перескажу жалобу мастеру при всех",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q05",
+      "scenario": "Вы понимаете, что работа больше не радует, и вы постоянно устаёте.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Признаю это, поговорю с управляющей о графике и найду время на отдых",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Буду терпеть, само пройдёт",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Начну брать больше клиенток, чтобы отвлечься",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Ничего не буду менять",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 1,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q06",
+      "scenario": "Коллега просит помочь с клиенткой, а у вас своя запись.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Честно скажу, когда освобожусь, и предложу помочь после своей клиентки",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Брошу свою клиентку и пойду помогать",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 3,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Помогу, но потом буду жаловаться",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Откажу без объяснений",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 1,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q07",
+      "scenario": "Клиентка говорит: «Вы меня не слышите, я просила совсем другую форму ногтей».",
+      "question": "Как ответите?",
+      "options": [
+        {
+          "id": "a",
+          "text": "«Давайте ещё раз уточним, что вы хотите. Мне важно сделать как надо»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 5,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "«Я сделала, как вы сказали»",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "«Это ваше мнение»",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Промолчу",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q08",
+      "scenario": "Клиентка давит на жалость, чтобы ей сделали процедуру бесплатно.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Спокойно посочувствую и предложу то, что реально возможно по правилам салона",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Сделаю бесплатно, чтобы не было неловко",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 3,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Скажу: «Вы мной манипулируете»",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Позову управляющую",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 4,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q09",
+      "scenario": "Вы замечаете, что коллега-мастер выгорела: работает без улыбки и срывается.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Поговорю с ней наедине, предложу поддержку и помощь с записью",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Сообщу управляющей",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 4,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Не буду вмешиваться",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Сделаю ей замечание",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 1,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q10",
+      "scenario": "Вам отказали в повышении до топ-мастера.",
+      "question": "Ваша реакция?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Спрошу, чего не хватает, и составлю план развития",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 5,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Расстроюсь, но продолжу работать как раньше",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Обижусь и начну работать хуже",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Начну искать другой салон назло",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 1,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q11",
+      "scenario": "Клиентка кричит: на следующий день после процедуры отпали ресницы, а у неё отпуск.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу: «Понимаю, как это обидно перед отпуском. Давайте я сразу всё исправлю»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 5,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 5,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Спокойно скажу: «Не кричите на меня»",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Отвечу в том же тоне",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Позову управляющую разбираться",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q12",
+      "scenario": "Вы не успеваете к концу смены сдать отчёт по материалам.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Заранее предупрежу управляющую и назову реальный срок",
+          "scores": {
+            "empathy": 4,
+            "emotion_management": 5,
+            "self_motivation": 5,
+            "social_skills": 4,
+            "stress": 5,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Сделаю наспех, лишь бы сдать",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 4,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Промолчу, может, не заметят",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "Свалю вину на администратора",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q13",
+      "scenario": "Вы замечаете, что коллега сегодня особенно внимательна к клиенткам.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Скажу ей: «Заметила, как ты сегодня работаешь. Здорово»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 5,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Ничего, это её работа",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 2,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Спрошу, что с ней случилось",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не обращу внимания",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q14",
+      "scenario": "Постоянная клиентка стала реже записываться и отвечает коротко.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Мягко спрошу: «Мне важно ваше мнение — всё ли вам нравится у нас?»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 4,
+            "self_motivation": 4,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "Буду ждать, она сама скажет",
+          "scores": {
+            "empathy": 2,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 2,
+            "stress": 3,
+            "self_awareness": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "Спрошу прямо: «Вы к другому мастеру ходите?»",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не буду обращать внимания",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 2,
+            "self_motivation": 2,
+            "social_skills": 1,
+            "stress": 2,
+            "self_awareness": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "goleman_q15",
+      "scenario": "Вы резко ответили коллеге в загруженный день и понимаете, что нужно извиниться.",
+      "question": "Что вы сделаете?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Подойду и скажу: «Прости, я была резкой. Мне жаль»",
+          "scores": {
+            "empathy": 5,
+            "emotion_management": 5,
+            "self_motivation": 5,
+            "social_skills": 5,
+            "stress": 4,
+            "self_awareness": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "Извинюсь, но объясню, что она сама виновата",
+          "scores": {
+            "empathy": 3,
+            "emotion_management": 3,
+            "self_motivation": 3,
+            "social_skills": 3,
+            "stress": 3,
+            "self_awareness": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "Сделаю вид, что ничего не было",
+          "scores": {
+            "empathy": 1,
+            "emotion_management": 1,
+            "self_motivation": 1,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "Не буду извиняться",
+          "scores": {
+            "empathy": 0,
+            "emotion_management": 1,
+            "self_motivation": 1,
+            "social_skills": 1,
+            "stress": 1,
+            "self_awareness": 1
+          }
+        }
+      ]
+    }
+  ]
+}
