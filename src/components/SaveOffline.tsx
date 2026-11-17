@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import images from "@/data/card-images.json";
-import box from "@/assets/rapport-box.jpg.asset.json";
+import box from "@/assets/rapport-box-communication.jpg";
 import { ALL_BACKS } from "@/lib/card-backs";
 import { offlineAvailable } from "@/lib/pwa";
 
-const urls = [box.url, ...ALL_BACKS, ...Object.values(images as Record<string, { front?: string; back?: string }>).flatMap((v) => [v.front, v.back])]
+const urls = [box, ...ALL_BACKS, ...Object.values(images as Record<string, { front?: string; back?: string }>).flatMap((v) => [v.front, v.back])]
   .filter((u): u is string => !!u);
 
 /** Downloads every card image into the device cache so cards open without internet. */

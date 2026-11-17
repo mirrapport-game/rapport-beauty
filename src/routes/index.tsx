@@ -1,16 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { TodayFlow } from "@/components/TodayFlow";
 import { useRoles } from "@/hooks/use-roles";
-import box from "@/assets/rapport-box.jpg.asset.json";
+import box from "@/assets/rapport-box-communication.jpg";
 import { GAME_TITLE } from "@/lib/game";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: GAME_TITLE },
-      { name: "description", content: "Психологическая игра для салонов и студий красоты: реальные сценарии с клиентами, навыки и эталонные решения." },
+      { name: "description", content: "Коммуникационная игра для салонов и студий красоты: реальные сценарии с клиентами, навыки и эталонные решения." },
       { property: "og:title", content: GAME_TITLE },
-      { property: "og:description", content: "Психологическая игра для сферы красоты: тренажёр общения в салоне." },
+      { property: "og:description", content: "Коммуникационная игра для сферы красоты: тренажёр общения в салоне." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -31,14 +31,14 @@ function Index() {
             <h1 className="mt-3 text-5xl leading-none sm:text-6xl">
               Раппорт <span className="block font-[family-name:var(--font-script)] text-6xl font-normal text-rose-gold sm:text-7xl">Beauty</span>
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">Психологическая игра для салонов и студий красоты: тренируйте сложные разговоры с клиентами, коллегами и руководством.</p>
+            <p className="mt-4 text-lg text-muted-foreground">Коммуникационная игра для салонов и студий красоты: тренируйте сложные разговоры с клиентами, коллегами и руководством.</p>
             <div className="mt-4 flex flex-wrap justify-center gap-2 text-sm md:justify-start">
               {["Люди", "Коммуникация", "Доверие", "Развитие"].map((t) => (
                 <span key={t} className="rounded-full border border-border bg-card px-3 py-1 text-foreground">{t}</span>
               ))}
             </div>
           </div>
-          <img src={box.url} alt="Коробка игры Раппорт Beauty" className="w-full rounded-3xl shadow-soft" />
+          <img src={box} alt="Коробка коммуникационной игры Раппорт Beauty" className="w-full rounded-3xl shadow-soft" />
         </section>
 
         {!user && (

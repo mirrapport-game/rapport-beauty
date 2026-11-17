@@ -11,6 +11,8 @@
 
 # Project rules
 
+- Import image-tool outputs directly as bundled assets; retain existing CDN pointers for unedited media to avoid changing historical deployments.
+
 - Library solutions live in `cards` (type solution), RLS-readable only by leader/admin; players get them only through revealed `card_assignments`. `src/server/solutions.json` is legacy (solo practice).
 - Live game state is the `game_sessions` row (stage, current player, timer); clients subscribe via realtime and compute the timer from `timer_started_at` + `timer_remaining`.
 - Turn cards are `card_assignments` rows (situation/role revealed at once; skill/solution hidden until the leader reveals); content is read only via the `session_cards` RPC, which applies the same visibility rule. `get_turn_skill`/`solution_access` are legacy.
